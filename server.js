@@ -1,7 +1,7 @@
 const express = require('express')
 const request = require("request")
 const app = express();
-
+const PORT = process.env.PORT || 3000;
 app.get('/', (req, res) => {
     res.send("Welcome to Covid App")
 })
@@ -28,4 +28,4 @@ const makeAPICall = (url) =>
     })
 
 
-app.listen(3000, () => console.log("server started"))
+app.listen(PORT, () => console.log("server started"))
