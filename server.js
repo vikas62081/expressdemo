@@ -2,6 +2,9 @@ const express = require('express')
 const request = require("request")
 const app = express();
 
+app.get('/', (req, res) => {
+    res.send("Welcome to Covid App")
+})
 app.get('/data', async (req, res) => {
     makeAPICall('https://data.covid19india.org/data.json')
         .then(resp => res.json(resp))
