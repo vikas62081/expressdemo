@@ -23,9 +23,13 @@ app.get('/state', async (req, res) => {
     makeAPICall('https://data.covid19india.org/v2/state_district_wise.json')
         .then(resp => res.json(resp))
 })
-app.get('vaccine', async (req, res) => {
+app.get('/vaccine', async (req, res) => {
     makeAPICall('https://www.mygov.in/sites/default/files/covid/vaccine/vaccine_counts_today.json')
         .then(resp => res.json(resp))
+})
+
+app.get("/*", (req, res) => {
+    res.send("Try any valid path please :)")
 })
 
 
