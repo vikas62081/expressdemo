@@ -27,9 +27,7 @@ app.get('vaccine', async (req, res) => {
     makeAPICall('https://www.mygov.in/sites/default/files/covid/vaccine/vaccine_counts_today.json')
         .then(resp => res.json(resp))
 })
-app.get("*", (req, res) => {
-    res.send("Path is not valid")
-})
+
 
 app.get('/zone')
 const makeAPICall = (url) =>
